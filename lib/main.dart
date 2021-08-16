@@ -25,35 +25,39 @@ class _CounterState extends State<Counter> {
     setState(() {
       _counter1++;
     });
-    void _decrement() {
-      setState(() {
-        _counter2--;
-      });
-    }
+  }
+
+  void _decrement() {
+    setState(() {
+      _counter2--;
+    });
   }
 
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ElevatedButton(
-          onPressed: _increment,
-          child: const Text("Incremented"),
-        ),
-        const SizedBox(
-          width: 25,
-          height: 12,
-        ),
-        Text('Counter is equal to $_counter1'),
-        FloatingActionButton(
-          onPressed: _decrement,
-          child: const Text("again decremented"),
-        ),
-        const SizedBox(
-          width: 100,
-          height: 20,
-        ),
-        Text("again counter is $_counter2"),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(90.0),
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: _increment,
+            child: const Text("Incremented"),
+          ),
+          const SizedBox(
+            width: 50,
+            height: 40,
+          ),
+          Text('Counter is equal to $_counter1'),
+          FloatingActionButton(
+            onPressed: _decrement,
+            child: const Text("again decremented"),
+          ),
+          const SizedBox(
+            width: 100,
+            height: 40,
+          ),
+          Text("again counter is $_counter2"),
+        ],
+      ),
     );
   }
 }
